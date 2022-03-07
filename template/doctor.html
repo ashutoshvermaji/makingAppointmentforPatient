@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<style type="text/css">
+    .root{
+    background:gray;
+    width:100%;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .subdiv{
+    background:#bfbfbf;
+    width:40%;
+    height:150px;
+    border-radius:15px;
+    padding:15px;
+    }
+.md-outline.select-wrapper+label {
+top: .5em !important;
+z-index: 2 !important;
+}
+
+</style>
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doctor</title>
+<!---------------------------------------------css starts from here---------------------------------->
+    <!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css"
+  rel="stylesheet"
+/>
+
+</head>
+<!------------------------------------body starts from here----------------------------------->
+<body>
+<form action="/appoint" method="GET" id="formaction">
+
+<div class="root">
+    <div class="subdiv">
+        <div class="head">
+            <span>DOCTOR'S SELECTION PANEL</span>
+        </div>
+<!----------------------select block for doctor-------------------------->
+          <div class="row">
+           <div class="col-md-6 select-outline">
+
+               <select required class="mdb-select md-form md-outline colorful-select dropdown-primary" id="doctorName" name="doctorName" style="width:70%;" >
+                   <option value="" disabled selected>Choose your Doctor</option>
+                   <option value="cad23456ist">Dr. ASHISH SHARMA(Cardiologist)</option>
+                   <option value="nr98765lgst">Dr. PULKIT GOSWAMI(Neurologist)</option>
+                   <option value="or65432dic">Dr. RAMANUJAN AYANGAR(Orthopaedic)</option>
+               </select><span id="choose"></span>
+               <label>firstly choose doctor</label>
+
+           </div>
+        </div>
+
+
+        <div class="row">
+             <div class="col-6">
+                 <input class="btn btn-primary" style="width:100%;" type="submit" value="Submit"  />
+             </div>
+             <div class="col-6">
+                 <input class="btn btn-primary"  style="width:100%;" type="reset" value="Reset"  />
+             </div>
+        </div>
+
+    </div>
+</div>
+</form>
+
+</body>
+<!-------------------------------------javascript starts from here------------------------------->
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"
+>
+
+
+
+
+</script>
+
+<script>
+    // Material Select Initialization
+$(document).ready(function() {
+$('.mdb-select').materialSelect();
+$('.select-wrapper.md-form.md-outline input.select-dropdown').bind('focus blur', function () {
+$(this).closest('.select-outline').find('label').toggleClass('active');
+$(this).closest('.select-outline').find('.caret').toggleClass('active');
+});
+});
+</script>
+</html>
